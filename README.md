@@ -16,4 +16,4 @@ Adding localStorage is next goal.
 + Adding due date to tasks
 + Adding radio buttons to tasks
 + Possibly login auth page
-+ 
++ Settings button in bottom left corner
