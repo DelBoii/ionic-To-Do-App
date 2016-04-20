@@ -32,7 +32,7 @@ angular.module('todo', ['ionic'])
   }
 })
 .controller('TodoCtrl', function($scope, $timeout, $ionicModal, Projects, $ionicSideMenuDelegate,$ionicActionSheet) {
-	
+
   // A utility function for creating a new project
   // with the given projectTitle
   var createProject = function(projectTitle) {
@@ -70,6 +70,12 @@ angular.module('todo', ['ionic'])
   }, {
     scope: $scope
   });
+  // Work in progress
+  $scope.deleteItem = function(index) {
+    $timeout(function () {
+        $scope.activeProject.tasks.splice(index, 1)
+    });
+};
 
   $scope.createTask = function(task) {
     if(!$scope.activeProject || !task) {
@@ -99,11 +105,8 @@ angular.module('todo', ['ionic'])
   $scope.toggleProjects = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
-	// Work in progress 
-	$scope.remove = function($index) { 
-  var index = $scope.tasks.indexOf($index);
-  $scope.tasks.splice(index, 1);     
-}
+	// Work in progress
+
 
   // Try to create the first project, make sure to defer
   // this by using $timeout so everything is initialized
@@ -121,4 +124,3 @@ angular.module('todo', ['ionic'])
   });
 
 });
-
