@@ -76,6 +76,24 @@ angular.module('todo', ['ionic'])
         $scope.activeProject.tasks.splice(index, 1)
     });
 };
+// Takes in the $index of the current list item.
+//
+$scope.deleteParentList = function(index) {
+    $scope.projects.splice(index, 1);
+  //Using a timeout function within the function to check if we have remove last element
+  //if we have then prompt user for another parent list
+  $timeout(function() {
+    if($scope.projects.length == 0) {
+      while(true) {
+        var projectTitle = prompt('Your first project title:');
+        if(projectTitle) {
+          createProject(projectTitle);
+          break;
+        }
+      }
+    }
+  });
+};
 
   $scope.createTask = function(task) {
     if(!$scope.activeProject || !task) {
@@ -106,7 +124,13 @@ angular.module('todo', ['ionic'])
     $ionicSideMenuDelegate.toggleLeft();
   };
 	// Work in progress
-
+  $scope.presentLoading=function() {
+    let loading = Loading.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    this.nav.present(loading);
+  }
 
   // Try to create the first project, make sure to defer
   // this by using $timeout so everything is initialized
@@ -116,6 +140,7 @@ angular.module('todo', ['ionic'])
       while(true) {
         var projectTitle = prompt('Your first project title:');
         if(projectTitle) {
+          presentLoading();
           createProject(projectTitle);
           break;
         }
