@@ -70,6 +70,11 @@ angular.module('todo', ['ionic'])
   }, {
     scope: $scope
   });
+  $ionicModal.fromTemplateUrl('settings.html', function(modal) {
+    $scope.settingsModal = modal;
+  }, {
+    scope: $scope
+  });
   // Work in progress
   $scope.deleteItem = function(index) {
     $timeout(function () {
@@ -101,15 +106,18 @@ $scope.deleteParentList = function(index) {
     }
     $scope.activeProject.tasks.push({
       title: task.title,
-    description: task.description
+      description: task.description,
+      dueDate: task.dueDate
     });
     $scope.taskModal.hide();
+    $scope.settingsModal.hide();
 
     // Inefficient, but save all the projects
     Projects.save($scope.projects);
 
     task.title = "";
     task.description="";
+    task.dueDate=new Date();
   };
 
   $scope.newTask = function() {
@@ -118,6 +126,13 @@ $scope.deleteParentList = function(index) {
 
   $scope.closeNewTask = function() {
     $scope.taskModal.hide();
+  }
+  $scope.openSettings = function() {
+    $scope.settingsModal.show();
+  };
+
+  $scope.closeSettings = function() {
+    $scope.settingsModal.hide();
   }
 
   $scope.toggleProjects = function() {
