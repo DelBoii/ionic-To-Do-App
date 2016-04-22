@@ -24,63 +24,50 @@
   </head>
 
   <body ng-app="todo" ng-controller="TodoCtrl">
-    <!--Modal page showing applicable settings for user -->
-    <script id="settings.html" type="text/ng-template">
-    <div class="modal">
-      <!-- Modal header bar -->
-      <ion-header-bar class="bar-positive">
-        <h1 class="title">Settings</h1>
-        <button class="button button-assertive" ng-click="closeSettings()">Cancel</button>
-      </ion-header-bar>
-      <!-- Modal content area -->
-      <ion-content>
-        <!-- Insert settings-->
-
-
-      </ion-content>
-    </div>
-  </script><!-- End settings page -->
   <script id="new-task.html" type="text/ng-template">
 
-    <div class="modal">
+  <div class="modal">
 
-      <!-- Modal header bar -->
-      <ion-header-bar class="bar-positive">
-        <h1 class="title">New Task</h1>
-        <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
-      </ion-header-bar>
+    <!-- Modal header bar -->
+    <ion-header-bar class="bar-positive">
+      <h1 class="title">New Task</h1>
+      <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
+    </ion-header-bar>
 
-      <!-- Modal content area -->
-      <ion-content>
-        <form ng-submit="createTask(task)">
-          <div class="list">
-            <label class="item item-input">
-              <input type="text" placeholder="What do you need to do?" ng-model="task.title">
-            </label>
-            <label class="item item-input">
-              <input type="text" placeholder="Due Date?" ng-model="task.description">
-            </label>
-            <label class="item item-input">
-              <div class="input-label">
-              Due Date
-              </div>
-              <input type="date" ng-model="task.dueDate">
-            </label>
+    <!-- Modal content area -->
+    <ion-content>
+
+      <form ng-submit="createTask(task)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="What do you need to do?" ng-model="task.title">
+          </label>
+			<label class="item item-input">
+            <input type="text" placeholder="Due Date?" ng-model="task.description">
+          </label>
+      <label class="item item-input">
+      <div class="input-label">
+      Due Date
+      </div>
+          <input type="date">
+          </label>
         </div>
         <div class="padding">
           <button type="submit" class="button button-block button-positive">Create Task</button>
         </div>
-        </form><!--end modal form -->
-      </ion-content>
-    </div>
-    </script>
+      </form>
+
+    </ion-content>
+
+  </div>
+
+</script>
+      <ion-side-menus>
 
 
-<ion-side-menus>
  <!-- Center content -->
 <ion-side-menu-content>
   <ion-header-bar class="bar-balanced">
-
     <button class="button button-icon" ng-click="toggleProjects()">
       <i class="icon ion-navicon"></i>
     </button>
@@ -96,18 +83,11 @@
       <ion-item ng-repeat="task in activeProject.tasks" ng-model="currentItem"
       ng-model="task.complete" class="item-remove-animate"        >
   		  <div class="row">
-          <div class="col">
-              {{task.title}}
-          </div>
-          <div class="col20">
-            {{task.dueDate | date:'MM-dd'}}
-          </div>
-
+  		  {{task.title}}
   		  </div>
       <div class="row">
   		  {{task.description}}
-      </div>
-
+      </div><!--end task content-->
 
 
         <!-- buttons with functions -->
@@ -116,7 +96,6 @@
 
       </ion-item>
     </ion-list>
-
   </ion-content>
   <div class="float-button">
   <span class="height-fix">
@@ -125,8 +104,6 @@
     </a>
   </span>
 </div>
-
-
 </ion-side-menu-content><!--end center -->
 
 
@@ -134,10 +111,9 @@
   <ion-side-menu side="left">
 
     <ion-header-bar class="bar-balanced">
-      <button class="button button-icon ion-gear-b" ng-click="openSettings()"></button>
+      <button class="button button-icon ion-ios-list-outline" ng-click="newProject()">
+      </button>
       <h1 class="title">Projects</h1>
-
-
       <button class="button button-icon ion-plus" ng-click="newProject()">
       </button>
     </ion-header-bar><!-- end header -->
