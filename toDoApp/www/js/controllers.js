@@ -71,33 +71,15 @@ angular.module('todo', ['ionic'])
     scope: $scope
   });
   $ionicModal.fromTemplateUrl('settings.html', function(modal) {
-    $scope.settingsModal = modal;
-  }, {
-    scope: $scope
-  });
+   $scope.settingsModal = modal;
+ }, {
+   scope: $scope
+ });
   // Work in progress
   $scope.deleteItem = function(index) {
     $timeout(function () {
         $scope.activeProject.tasks.splice(index, 1)
     });
-};
-// Takes in the $index of the current list item.
-//
-$scope.deleteParentList = function(index) {
-    $scope.projects.splice(index, 1);
-  //Using a timeout function within the function to check if we have remove last element
-  //if we have then prompt user for another parent list
-  $timeout(function() {
-    if($scope.projects.length == 0) {
-      while(true) {
-        var projectTitle = prompt('Your first project title:');
-        if(projectTitle) {
-          createProject(projectTitle);
-          break;
-        }
-      }
-    }
-  });
 };
 
   $scope.createTask = function(task) {
@@ -106,18 +88,15 @@ $scope.deleteParentList = function(index) {
     }
     $scope.activeProject.tasks.push({
       title: task.title,
-      description: task.description,
-      dueDate: task.dueDate
+    description: task.description
     });
     $scope.taskModal.hide();
-    $scope.settingsModal.hide();
 
     // Inefficient, but save all the projects
     Projects.save($scope.projects);
 
     task.title = "";
     task.description="";
-    task.dueDate=new Date();
   };
 
   $scope.newTask = function() {
@@ -133,19 +112,30 @@ $scope.deleteParentList = function(index) {
 
   $scope.closeSettings = function() {
     $scope.settingsModal.hide();
-  }
+  };
 
   $scope.toggleProjects = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
 	// Work in progress
-  $scope.presentLoading=function() {
-    let loading = Loading.create({
-      content: "Please wait...",
-      duration: 3000
-    });
-    this.nav.present(loading);
-  }
+  // Takes in the $index of the current list item.
+ //
+ $scope.deleteParentList = function(index) {
+     $scope.projects.splice(index, 1);
+   //Using a timeout function within the function to check if we have remove last element
+   //if we have then prompt user for another parent list
+   $timeout(function() {
+     if($scope.projects.length == 0) {
+       while(true) {
+         var projectTitle = prompt('Your first project title:');
+         if(projectTitle) {
+           createProject(projectTitle);
+           break;
+         }
+       }
+     }
+   });
+ };
 
   // Try to create the first project, make sure to defer
   // this by using $timeout so everything is initialized
@@ -155,7 +145,6 @@ $scope.deleteParentList = function(index) {
       while(true) {
         var projectTitle = prompt('Your first project title:');
         if(projectTitle) {
-          presentLoading();
           createProject(projectTitle);
           break;
         }
