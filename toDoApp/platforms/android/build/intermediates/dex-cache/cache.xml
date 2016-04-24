@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/ryangordon/Desktop/ionicToDoApp-master/toDoApp/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="9eeabefd0d7bd95731ed0c06ca38973dd28318af">
+        <dex dex="/Users/ryangordon/Desktop/ionicToDoApp-master/toDoApp/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_d2b2a84853ba2182af985a3e201915f2beaa0c5f.jar" />
+    </item>
+    <item
+        jar="/Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d4fde1410a89b536fe83581437c874ec9a8ba1f1">
+        <dex dex="/Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_3059f21a812e17f462a6b19f3eee9e2181736660.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/android/build/intermediates/res/merged/debug/drawable-mdpi-v4/icon.png",
+        "source": "/Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/android/res/drawable-mdpi/icon.png"
+    },
+    {
+        "merged": "/Users/ryangordon/Desktop/ionicToDoApp-master/toDoApp/platforms/android/build/intermediates/res/merged/debug/drawable-mdpi-v4/icon.png",
+        "source": "/Users/ryangordon/Desktop/ionicToDoApp-master/toDoApp/platforms/android/res/drawable-mdpi/icon.png"
+    }
+]

@@ -1,0 +1,20 @@
+dependencies: \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Private/Plugins/CDVHandleOpenURL/CDVHandleOpenURL.m \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Private/Plugins/CDVHandleOpenURL/CDVHandleOpenURL.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVPlugin.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVPluginResult.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVAvailability.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVAvailabilityDeprecated.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/NSMutableArray+QueueAdditions.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVCommandDelegate.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVInvokedUrlCommand.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVWebViewEngineProtocol.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDV.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVAppDelegate.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVViewController.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVCommandQueue.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVScreenOrientationDelegate.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVURLProtocol.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVWhitelist.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVTimer.h \
+  /Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/ios/CordovaLib/Classes/Public/CDVUserAgentUtil.h

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/ryangordon/Desktop/ionicToDoApp-master/toDoApp/platforms/android/build/intermediates/res/merged/debug/xml/config.xml",
+        "source": "/Users/ryangordon/Desktop/ionicToDoApp-master/toDoApp/platforms/android/res/xml/config.xml"
+    },
+    {
+        "merged": "/Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/android/build/intermediates/res/merged/debug/xml/config.xml",
+        "source": "/Users/ryangordon/GitHub/ionicToDoApp/toDoApp/platforms/android/res/xml/config.xml"
+    }
+]
