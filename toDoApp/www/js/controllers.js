@@ -1,9 +1,9 @@
 angular.module('todo', ['ionic'])
-/**
- * The Projects factory handles saving and loading projects
- * from local storage, and also lets us save and load the
- * last active project index.
- */
+
+ //The Projects factory handles saving and loading projects
+ // from local storage, and also lets us save and load the
+ //last active project index.
+
 .factory('Projects', function() {
   return {
     all: function() {
@@ -64,12 +64,17 @@ angular.module('todo', ['ionic'])
     $ionicSideMenuDelegate.toggleLeft(false);
   };
 
-  // Create our modal
+  // Create our modals for new tasks and settings
   $ionicModal.fromTemplateUrl('new-task.html', function(modal) {
     $scope.taskModal = modal;
   }, {
     scope: $scope
   });
+  $ionicModal.fromTemplateUrl('settings.html', function(modal) {
+   $scope.settingsModal = modal;
+ }, {
+   scope: $scope
+ });
   // Work in progress
   $scope.deleteItem = function(index) {
     $timeout(function () {
@@ -99,15 +104,18 @@ angular.module('todo', ['ionic'])
     }
     $scope.activeProject.tasks.push({
       title: task.title,
-    description: task.description
+      description: task.description,
+      dueDate: task.dueDate
     });
     $scope.taskModal.hide();
+    $scope.settingsModal.hide();
 
-    // Inefficient, but save all the projects
+    //Save all projects
     Projects.save($scope.projects);
 
     task.title = "";
     task.description="";
+    task.dueDate=new Date();
   };
 
   $scope.newTask = function() {
@@ -116,13 +124,19 @@ angular.module('todo', ['ionic'])
 
   $scope.closeNewTask = function() {
     $scope.taskModal.hide();
-  }
+  };
+
+  $scope.openSettings = function() {
+    $scope.settingsModal.show();
+  };
+
+  $scope.closeSettings = function() {
+    $scope.settingsModal.hide();
+  };
 
   $scope.toggleProjects = function() {
     $ionicSideMenuDelegate.toggleLeft();
   };
-	// Work in progress
-
 
   // Try to create the first project, make sure to defer
   // this by using $timeout so everything is initialized

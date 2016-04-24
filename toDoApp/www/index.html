@@ -24,6 +24,22 @@
   </head>
 
   <body ng-app="todo" ng-controller="TodoCtrl">
+    <!--Modal page showing applicable settings for user -->
+    <script id="settings.html" type="text/ng-template">
+    <div class="modal">
+      <!-- Modal header bar -->
+      <ion-header-bar class="bar-positive">
+        <h1 class="title">Settings</h1>
+        <button class="button button-assertive" ng-click="closeSettings()">Cancel</button>
+      </ion-header-bar>
+      <!-- Modal content area -->
+      <ion-content>
+        <!-- Insert settings-->
+
+
+      </ion-content>
+    </div>
+  </script><!-- End settings page -->
   <script id="new-task.html" type="text/ng-template">
 
   <div class="modal">
@@ -49,7 +65,7 @@
       <div class="input-label">
       Due Date
       </div>
-          <input type="date" value="2013-01-08">
+          <input type="date" ng-model="task.dueDate">
           </label>
         </div>
         <div class="padding">
@@ -83,8 +99,13 @@
       <ion-item ng-repeat="task in activeProject.tasks" ng-model="currentItem"
       ng-model="task.complete" class="item-remove-animate"        >
   		  <div class="row">
-  		  {{task.title}}
-  		  </div>
+          <div class="col">
+                {{task.title}}
+            </div>
+            <div class="col20">
+              {{task.dueDate | date:'MM-dd'}}
+            </div>
+          </div>
       <div class="row">
   		  {{task.description}}
       </div><!--end task content-->
@@ -99,7 +120,7 @@
   </ion-content>
   <div class="float-button">
   <span class="height-fix">
-    <a ui-sref="add-trip" class="content"  ng-click="newTask()">
+    <a class="content"  ng-click="newTask()">
       <i class="ion-ios-plus balanced"> </i>
     </a>
   </span>
@@ -111,18 +132,18 @@
   <ion-side-menu side="left">
 
     <ion-header-bar class="bar-balanced">
-      <button class="button button-icon ion-ios-list-outline" ng-click="newProject()">
+      <button class="button button-icon ion-ios-cog-outline" ng-click="openSettings()">
       </button>
       <h1 class="title">Projects</h1>
       <button class="button button-icon ion-plus" ng-click="newProject()">
       </button>
     </ion-header-bar><!-- end header -->
-    <ion-content >
+    <ion-content>
       <ion-list>
         <ion-item ng-repeat="project in projects" ng-click="selectProject(project, $index)" ng-class="{active: activeProject == project}">
           <div class="row">
           {{project.title}}
-        </div>
+         </div>
           <ion-option-button class="button-assertive"  ng-click="deleteParentList($index)">Delete</ion-option-button>
         </ion-item>
       </ion-list>
