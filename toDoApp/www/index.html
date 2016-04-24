@@ -49,7 +49,7 @@
       <div class="input-label">
       Due Date
       </div>
-          <input type="date">
+          <input type="date" value="2013-01-08">
           </label>
         </div>
         <div class="padding">
@@ -78,8 +78,8 @@
     </button>
   </ion-header-bar><!-- end header-->
 
-  <ion-content scroll="false">
-    <ion-list>
+  <ion-content >
+    <ion-list can-swipe="true">
       <ion-item ng-repeat="task in activeProject.tasks" ng-model="currentItem"
       ng-model="task.complete" class="item-remove-animate"        >
   		  <div class="row">
@@ -117,7 +117,7 @@
       <button class="button button-icon ion-plus" ng-click="newProject()">
       </button>
     </ion-header-bar><!-- end header -->
-    <ion-content scroll="false">
+    <ion-content >
       <ion-list>
         <ion-item ng-repeat="project in projects" ng-click="selectProject(project, $index)" ng-class="{active: activeProject == project}">
           <div class="row">

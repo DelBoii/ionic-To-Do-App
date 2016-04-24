@@ -39,3 +39,8 @@
   margin-top: -20px; /* Note, this must be half the font size */
  
 }
+input[type="date"], textarea {
+
+  background-color : #d1d1d1; 
+
+}

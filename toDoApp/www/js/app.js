@@ -27,16 +27,14 @@ angular.module('todo', ['ionic'])
 
     .state('app', {
     url: '/app',
-    abstract: true,
     templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    controller: 'ToDoCtrl'
   })
 
-  .state('app.newTask', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/new-task.html'
+  .state('new-task', {
+    url: '/new-task',
+    templateUrl: 'templates/new-task.html',
+	controller: 'ToDoCtrl'
       }
     }
   })
@@ -69,5 +67,5 @@ angular.module('todo', ['ionic'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/search');
+  $urlRouterProvider.otherwise('/app');
 });
