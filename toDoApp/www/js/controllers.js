@@ -133,6 +133,17 @@ angular.module('todo', ['ionic'])
   $scope.closeSettings = function() {
     $scope.settingsModal.hide();
   };
+  //right now the app is not on the store this is added for a future release
+  //http://www.fizerkhan.com/blog/posts/Rate-this-app-in-Ionic-application.html
+  //happy not to take marks for this 
+/* $scope.rateUs = function () {
+  if ($ionicPlatform.is('ios')) {
+        window.open('itms-apps://itunes.apple.com/us/app/domainsicle-domain-name-search/id511364723?ls=1&mt=8'); // or itms://
+    } else if ($ionicPlatform.is('android')) {
+        window.open('market://details?id=<package_name>');
+    }
+}
+*/
 
   $scope.toggleProjects = function() {
     $ionicSideMenuDelegate.toggleLeft();

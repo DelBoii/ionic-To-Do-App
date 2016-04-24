@@ -35,7 +35,14 @@
       <!-- Modal content area -->
       <ion-content>
         <!-- Insert settings-->
-
+        <ion-list>
+          <ion-item>
+            <div class = "row">
+            <div class="col">Like the app?</div>
+            <div class="col20"><button class="button button-positive" ng-click="rateUs()">Rate us!</button></div>
+          </div>
+            </ion-item>
+          </ion-list>
 
       </ion-content>
     </div>
@@ -59,7 +66,7 @@
             <input type="text" placeholder="What do you need to do?" ng-model="task.title">
           </label>
 			<label class="item item-input">
-            <input type="text" placeholder="Due Date?" ng-model="task.description">
+            <input type="text" placeholder="Description of task?" ng-model="task.description">
           </label>
       <label class="item item-input">
       <div class="input-label">
@@ -88,10 +95,10 @@
       <i class="icon ion-navicon"></i>
     </button>
     <h1 class="title">{{activeProject.title}}</h1>
-    <!-- New Task button-->
-    <button class="button button-icon" ng-click="newTask()">
+    <!-- New Task button **Removed this as no sense in having two buttons. Leaving code for future revisions-->
+    <!--<button class="button button-icon" ng-click="newTask()">
       <i class="icon ion-compose"></i>
-    </button>
+    </button>-->
   </ion-header-bar><!-- end header-->
 
   <ion-content >
@@ -112,7 +119,6 @@
 
 
         <!-- buttons with functions -->
-		  <ion-option-button class="button-positive">Edit</ion-option-button>
    		<ion-option-button class="button-assertive"  ng-click="deleteItem($index)">Delete</ion-option-button>
 
       </ion-item>
